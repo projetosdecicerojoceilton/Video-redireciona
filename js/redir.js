@@ -70,6 +70,6 @@ function preencherMetaTagsYouTube(videoId) {
     .catch(error => {
       console.error('Erro ao buscar informações do vídeo:', error);
     });
-
-    preencherMetaTagsYouTube()
 }
+
+preencherMetaTagsYouTube()
