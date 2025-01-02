@@ -28,14 +28,10 @@ function startCountdown(seconds, redirectUrl) {
 
 // Obtendo a URL do vídeo do parâmetro da URL
 const urlParams = new URLSearchParams(window.location.search);
-let videoUrl = ""
 
 
-if (urlParams == "") {
-  videoUrl = "https://youtu.be/_3alnKwuOHQ?si=wICpgQZYb61OGYrV"
-} else {
   let videoUrl = urlParams.get('video');
-}
+
 
 // Validando a URL e extraindo o ID do vídeo
 if (videoUrl) {
