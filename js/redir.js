@@ -51,3 +51,25 @@ if (videoUrl) {
 } else {
   console.error('Parâmetro "video" não encontrado na URL');
 }
+function preencherMetaTagsYouTube(videoId) {
+  const apiKey = 'YOUR_API_KEY'; // Substitua pela sua chave da API
+  const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const video = data.items[0];
+      const titulo = video.snippet.title;
+      const descricao = video.snippet.description;
+      const thumbnail = video.snippet.thumbnails.default.url;
+
+      document.querySelector('meta[property="og:title"]').content = titulo;
+      document.querySelector('meta[property="og:description"]').content = descricao;
+      document.querySelector('meta[property="og:image"]').content = thumbnail;
+    })
+    .catch(error => {
+      console.error('Erro ao buscar informações do vídeo:', error);
+    });
+
+    preencherMetaTagsYouTube()
+}
