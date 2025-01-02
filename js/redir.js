@@ -52,7 +52,7 @@ if (videoUrl) {
   console.error('Parâmetro "video" não encontrado na URL');
 }
 function preencherMetaTagsYouTube(videoId) {
-  const apiKey = 'YOUR_API_KEY'; // Substitua pela sua chave da API
+  const apiKey = 'AIzaSyCamz33adD2c_cSenIF85h1WiQCanF2jsc'; // Substitua pela sua chave da API
   const url = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${apiKey}&part=snippet`;
 
   fetch(url)
